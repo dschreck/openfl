@@ -697,8 +697,11 @@ abstract ByteArray(ByteArrayData) from ByteArrayData to ByteArrayData {
 	private function __resize (size:Int) {
 		
 		if (size > __length) {
-			
+			#if js
+			var bytes = Bytes.alloc (size);
+			#else
 			var bytes = Bytes.alloc (((size + 1) * 3) >> 1);
+			#end
 			var cacheLength = length;
 			length = __length;
 			bytes.blit (0, this, 0, __length);

@@ -1,4 +1,4 @@
-package zfl.display;
+package openfl.display;
 
 import openfl.events.EventDispatcher;
 import openfl.display.Shader;
